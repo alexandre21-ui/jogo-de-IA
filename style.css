@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #080b18;
+    --caixa: #11182e;
+    --botao: #202b50;
+    --roxo: #6c63ff;
+    --azul: #00d9ff;
+    --branco: #ffffff;
+    --cinza: #b8bfd6;
+}
+
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #080b18,
+        #10183a,
+        #080b18
+    );
+
+    color: var(--branco);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.caixa-principal {
+    width: 100%;
+    max-width: 800px;
+
+    text-align: center;
+}
+
+h1 {
+    color: var(--azul);
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: var(--cinza);
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+}
+
+.caixa-jogo {
+    background-color: var(--caixa);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    border: 1px solid #29345d;
+}
+
+/* BARRA DE PROGRESSO */
+
+.progresso {
+    width: 100%;
+    height: 8px;
+
+    background-color: #252d49;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+#barra-progresso {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--roxo),
+        var(--azul)
+    );
+
+    transition: width 0.4s;
+}
+
+/* PERGUNTA */
+
+.caixa-perguntas h2 {
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+/* ALTERNATIVAS */
+
+.caixa-alternativas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.alternativa {
+    width: 100%;
+
+    padding: 18px;
+
+    border: 2px solid transparent;
+
+    border-radius: 12px;
+
+    background-color: var(--botao);
+
+    color: white;
+
+    font-size: 16px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.alternativa:hover {
+    background-color: #2d3b6a;
+
+    border-color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+/* RESULTADO */
+
+.caixa-resultado {
+    display: none;
+}
+
+.caixa-resultado.mostrar {
+    display: block;
+}
+
+.caixa-resultado h2 {
+    color: var(--azul);
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+#texto-resultado {
+    color: var(--cinza);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    margin-bottom: 25px;
+}
+
+/* BOTÃO NOVAMENTE */
+
+#novamente-btn {
+    background: linear-gradient(
+        135deg,
+        var(--roxo),
+        var(--azul)
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 15px 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#novamente-btn:hover {
+    transform: scale(1.05);
+}
+
+/* RODAPÉ */
+
+.rodape {
+    color: #737b99;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .caixa-jogo {
+        padding: 20px;
+    }
+
+    .caixa-perguntas h2 {
+        font-size: 19px;
+    }
+
+    .alternativa {
+        font-size: 15px;
+    }
+}
